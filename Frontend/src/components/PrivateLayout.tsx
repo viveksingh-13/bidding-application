@@ -20,16 +20,35 @@ const PrivateLayout = ({ children }: { children: ReactNode }) => {
     <>
       {userName && (
         <div className="min-h-screen  flex flex-col">
-          <header className="w-full bg-gray-400 p-5 ">
+          <header className="w-full bg-gray-400 p-5 flex justify-between  gap-5 capitalize">
             <button
-              className="bg-blue-500 text-white p-2 rounded-lg float-end"
+              className="bg-blue-500 text-white p-2 rounded-lg capitalize"
               onClick={() => {
-                localStorage.removeItem("userName");
-                router.push("/login");
+                router.push("/admin");
               }}
             >
-              logout
+              admin
             </button>
+            <div>
+              <button
+                className="bg-blue-500 text-white p-2 mr-[20px] rounded-lg capitalize"
+                onClick={() => {
+                  router.push("/");
+                }}
+              >
+                Back
+              </button>
+
+              <button
+                className="bg-blue-500 text-white p-2 rounded-lg float-end capitalize"
+                onClick={() => {
+                  localStorage.removeItem("userName");
+                  router.push("/login");
+                }}
+              >
+                logout
+              </button>
+            </div>
           </header>
           {children}
         </div>
