@@ -15,7 +15,7 @@ const PrivateLayout = ({ children }: { children: ReactNode }) => {
     }
   }, [userName, router]);
 
-  // Render children if user is "admin"
+  // Render children if user is "admin   "
   return (
     <>
       {userName && (
